@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { MainWrapper } from './MainWrapper/MainWrapper';
 import { Section } from './Section/Section';
 import { FeedBackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
@@ -34,8 +33,8 @@ export const App = () => {
     Math.round((good * 100) / countTotalFeedback)
 
     
-    return (
-      <MainWrapper>
+  return (
+      <div>
         <Section title="- Please Live Feedback -">
           <FeedBackOptions
             options={Object.keys({good, neutral, bad})}
@@ -47,9 +46,9 @@ export const App = () => {
             neutral={neutral}
             bad={bad}
             total={countTotalFeedback}
-            positivePercentage={countPositiveFeedbackPercentage} />
+            positivePercentage={countPositiveFeedbackPercentage()} />
         </Section>
-      </MainWrapper>
+  </div>
     )
 }
 
